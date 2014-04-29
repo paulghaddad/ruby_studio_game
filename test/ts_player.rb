@@ -45,4 +45,8 @@ class PlayerTest < Test::Unit::TestCase
     refute(@weak_player.strong?)
   end
 
+  def test_found_treasures_instance_variable
+    assert_equal({}, @test_player.found_treasures)
+  end
+
 end
