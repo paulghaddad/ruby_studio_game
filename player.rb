@@ -1,3 +1,5 @@
+require_relative 'treasure_trove'
+
 class Player
 
   attr_reader :health, :name, :found_treasures
@@ -15,6 +17,12 @@ class Player
 
   def to_s
     "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
+  end
+
+  def each_found_treasure
+    @found_treasures.each do |name, points|
+      yield TreasureTrove::Treasure.new(name, points)
+    end
   end
 
   def score

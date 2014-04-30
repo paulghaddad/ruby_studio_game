@@ -21,6 +21,6 @@ chipmunks = Game.new("chipmunks")
 chipmunks.add_player(player5)
 chipmunks.add_player(player6)
 chipmunks.add_player(player7)
-chipmunks.play(5)
+chipmunks.play(10)
 chipmunks.print_stats
 
