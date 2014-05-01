@@ -19,6 +19,11 @@ class Player
     "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
   end
 
+  def self.from_csv(line)
+    name, health = line.split(",")
+    Player.new(name, Integer(health))
+  end
+
   def each_found_treasure
     @found_treasures.each do |name, points|
       yield TreasureTrove::Treasure.new(name, points)
