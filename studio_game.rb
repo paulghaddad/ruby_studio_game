@@ -1,4 +1,6 @@
 require_relative 'player'
+require_relative 'clumsy_player'
+require_relative 'berserk_player'
 require_relative 'game'
 
 #player1 = Player.new("moe")
@@ -19,6 +21,10 @@ require_relative 'game'
 
 chipmunks = Game.new("chipmunks")
 chipmunks.load_players( ARGV.shift || "players.csv" )
+klutz = ClumsyPlayer.new('klutz', 105, 3)
+chipmunks.add_player(klutz)
+berserker = BerserkPlayer.new('berserker', 50)
+chipmunks.add_player(berserker)
 
 # Create a loop that allows users to continue playing, or to exit.
 
@@ -37,6 +43,8 @@ loop do
       puts "Please enter a number or 'quit'"
   end
 end
+
+
 
 
 
